@@ -3,37 +3,52 @@
     --osc-font: 'Open Sans Condensed', sans-serif;    
 }
 
-.col-xs-4 h4 {
+.col-xs-6,
+.col-xs-6 h4 {
+    height:100%;
+}
+
+.pull-left > a.brand img {
+    max-height: 50px;
+}
+
+.col-xs-6 h4 {
     font-family: var(--osc-font);
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .featured_label h3 {
     font-family: var(--osc-font);
     font-size: 36px;
     text-align: center;
+}
+
+a,
+.featured_label h3 {
     text-decoration: underline;
 }
 
 .navbar {
     border-radius: 0px;
     box-shadow: none;
-    border: none;
+    /* border: none;
         border-bottom-width: medium;
         border-bottom-style: none;
         border-bottom-color: currentcolor;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea; */
+    border-color: #D6D6D6;
+    box-shadow: 0px 1px 3px 0px rgba(134, 134, 134, 0.4);
     font-family: var(--osc-font);
-    font-size:18px;
+    font-size:16px;
+    font-weight:bold;
 }
 
 #center-nav {
     float: none;
-    text-align: center;      
+    text-align: center;   
 }
 
 #center-nav .center-nav {
-    float: none;
     display: inline-block;
 }
 
