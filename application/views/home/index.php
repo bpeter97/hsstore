@@ -25,7 +25,7 @@
 </div>
 
 <!-- Second row -->
-<div class="row top-padded-row" style="background-color:white;">
+<div class="row padded-row" style="background-color:white;">
     <div class="col-xs-2 " id="">
 
     </div>
