@@ -1,318 +1,141 @@
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap" async defer></script>
+
+    <script>
+        function initMap() {
+
+            var myLatLng = {lat: 36.359011, lng: -119.331300};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 13
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
+
+        }
+    </script>
+
 <div class="container-fluid" id="content">
-    <!-- First row -->
-    <div class="row featured_label" style="background-color:rgb(252, 248, 248);margin-top:-16px;padding-bottom:10px;">
-        <h3>Featured Products</h3>
+<!-- First row -->
+<div class="row featured_label" style="background-color:rgb(252, 248, 248);margin-top:-16px;padding-bottom:10px;">
+    <h3>Featured Products</h3>
+</div>
+
+<!-- Second row -->
+<div class="row top-padded-row" style="background-color:white;">
+    <div class="col-xs-2 " id="">
+
     </div>
-
-    <!-- Second row -->
-    <div class="row" style="background-color:white;">
-        <div class="col-xs-2 " id="">
-
-        </div>
-        <div class="col-xs-8">
-            <div id="adv_team_4_columns_carousel" class="carousel slide four_shows_one_move team_columns_carousel_wrapper" data-ride="carousel" data-interval="2000" data-pause="hover">
-                <!--========= Wrapper for slides =========-->
-                <div class="carousel-inner" role="listbox">
-                    <!--========= 1st slide =========-->
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
-                            <img src="http://placehold.it/150x150" alt="slider 01">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
+    <div class="col-xs-8">
+        <div id="Carousel" class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#Carousel" data-slide-to="1"></li>
+                <li data-target="#Carousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
                         </div>
                     </div>
-                    <!--========= 2nd slide =========-->
-                    <div class="item active">
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========= 3rd slide =========-->
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========= 4th slide =========-->
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========= 5th Slide =========-->
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========= 6th Slide =========-->
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
-                            <img src="http://placehold.it/150x150" alt="slider 01">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========= 7th Slide =========-->
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
-                            <img src="http://placehold.it/150x150" alt="slider 01">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!--========= 8th Slide =========-->
-                    <div class="item">
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-1">
-                            <img src="http://placehold.it/150x150" alt="slider 01">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-2">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Lahore</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-3 team_columns_item_image cloneditem-3">
-                            <img src="http://placehold.it/150x150" alt="slider 02">
-                            <div class="team_columns_item_caption">
-                                <h4>Karachi</h4>
-                                <hr>
-                                <h5>PAKISTAN</h5>
-                            </div>
-                        </div>
-                    </div>
+                    <!--.row-->
                 </div>
-                <!--======= Navigation Buttons =========-->
-                <!--======= Left Button =========-->
-                <a class="left carousel-control team_columns_carousel_control_left adv_left" href="#adv_team_4_columns_carousel" role="button" data-slide="prev">
-                    <span class="fa fa-angle-left team_columns_carousel_control_icons" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <!--======= Right Button =========-->
-                <a class="right carousel-control team_columns_carousel_control_right adv_right" href="#adv_team_4_columns_carousel" role="button" data-slide="next">
-                    <span class="fa fa-angle-right team_columns_carousel_control_icons" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <!--.item-->
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
+                        </div>
+                    </div>
+                    <!--.row-->
+                </div>
+                <!--.item-->
+                <div class="item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                            </a>
+                        </div>
+                    </div>
+                    <!--.row-->
+                </div>
+                <!--.item-->
             </div>
+            <!--.carousel-inner--> <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+            <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
         </div>
-        <div class="col-xs-2">
-            
-        </div>
+        <!--.Carousel-->
     </div>
+    <div class="col-xs-2">
+        
+    </div>
+</div>
+<!-- End of 2nd row -->
 
-    
+<!-- 3rd row -->
+<div class="row" style="" id="">
+    <div class="col-xs-12"id="map" style="width:100%;height:300px;background-color:yellow;">
+    </div>
+</div>
+<!-- End of 3rd row -->
+
+
 
 
 

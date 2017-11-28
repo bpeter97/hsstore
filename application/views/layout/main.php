@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>One-Shot Shop</title>
     
     <!-- Include our fonts -->
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans+Condensed:300" rel="stylesheet"> 
@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
     integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <script src="<?php echo base_url().'assets/js/jquery-3.2.1.min.js'; ?>"></script>
+    <script src="<?= base_url(); ?>/assets/js/jquery-3.2.1.min.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -28,33 +29,23 @@
 </head>
 <body style="background-color:lightslategrey;">
 
-    <div class="container-fluid" style="height:45px;background-color:white;">
-        <div class="col-xs-4">
-            <h4 class="pull-left">The Head Shot Shop</h4>
+    <div class="container-fluid" style="height:35px;background-color:#e0e0e0;">
+        <div class="col-xs-6">
+            <h4 class="pull-left">
+                <span class="glyphicon glyphicon-envelope" style="font-size:12px;"></span><p style="float:right;padding-left:5px;">  email@email.com</p>
+            </h4>
         </div>
-        <div class="col-xs-4">
-            <div class="col-xs-11">
-                <label class="form-input">
-                    <input type="text" id="person_name" required />
-                    <span class="label">Search our store!</span>
-                    <span class="underline"></span>
-                </label>
-            </div>
-            <div class="col-xs-1">
-                <a class="btn btn-primary" href="http://" style="border:none;margin-top:5px;"><span class="glyphicon glyphicon-search"></span></a>
-            </div>
-        </div>
-        <div class="col-xs-4">
+        <div class="col-xs-6">
             <h4 class="pull-right">Questions? Call 1 (800) Call-Now</h4>
         </div>
     </div>
 
-    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="45">
+    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="37">
         <div class="pull-left">
             <a class="brand" href="#">
                         <!-- UNCOMMENT THE CSS VALUES TO TEST OTHER DIMENTIONS -->
                         <!-- <img src="http://placehold.it/150x80&text=Logo" alt=""> -->
-                        <img src="http://placehold.it/150x50&text=Logo" alt="">
+                        <img src="<?= base_url(); ?>assets/imgs/logo.jpg" alt="">
             </a>
         </div>
         <ul class="nav navbar-nav" id="center-nav">
@@ -83,7 +74,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> 
-                            <strong><?= $user->getUsername(); ?></strong>
+                            <strong> Name <!-- <= $user->getUsername(); ?> --></strong>
                             <span class="glyphicon glyphicon-chevron-down"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -96,10 +87,10 @@
                                             </p>
                                         </div>
                                         <div class="col-lg-8">
-                                            <p class="text-left"><strong>Nombre Apellido</strong></p>
-                                            <p class="text-left small">correoElectronico@email.com</p>
+                                            <p class="text-left"><strong>First Last</strong></p>
+                                            <p class="text-left small">email@email.com</p>
                                             <p class="text-left">
-                                                <a href="#" class="btn btn-primary btn-block btn-sm">Actualizar Datos</a>
+                                                <a href="#" class="btn btn-primary btn-block btn-sm">View Profile</a>
                                             </p>
                                         </div>
                                     </div>
@@ -111,7 +102,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <p>
-                                                <a href="#" class="btn btn-danger btn-block">Cerrar Sesion</a>
+                                                <a href="#" class="btn btn-danger btn-block">Logout</a>
                                             </p>
                                         </div>
                                     </div>

@@ -31,21 +31,21 @@
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap" async defer></script>
 
     <script>
-function initMap() {
+        function initMap() {
 
-    var myLatLng = {lat: 36.359011, lng: -119.331300};
+            var myLatLng = {lat: 36.359011, lng: -119.331300};
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: myLatLng,
-      zoom: 13
-    });
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-    });
+            var map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 13
+            });
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
 
-}
+        }
     </script>
     
 </head>
