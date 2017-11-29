@@ -345,10 +345,10 @@ ul.dropdown-cart li .item-right button {
     background-position: top center;
 }
 .parallax-one {
-    background-image: url(file:///C:/portable/Projects/hsstore/assets/imgs/header_panel.jpg);
+    background-image: url(../imgs/header_panel.jpg);
 }
 .parallax-two {
-    background-image: url(file:///C:/portable/Projects/hsstore/assets/imgs/second_header.jpg);
+    background-image: url(../imgs/second_header.jpg);
 }
 
 .parallax-one h1,

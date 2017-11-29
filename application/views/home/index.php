@@ -18,173 +18,294 @@
         }
     </script>
 
-<div class="container-fluid" id="content">
+<div class="parallax-one">
+<h1>
+        Welcome to the One-Shot Shop!
+    </h1>
+</div>
+<div class="container-fluid" id="content"></div>
+
 <!-- First row -->
-<div class="row featured_label" style="background-color:rgb(252, 248, 248);margin-top:-16px;padding-bottom:10px;">
-    <h3>Featured Products</h3>
+<div class="row featured_label" style="background-color:white;margin-bottom:-15px;">
+<h3>Featured Products</h3>
 </div>
 
 <!-- Second row -->
-<div class="row padded-row" style="background-color:white;">
-    <div class="col-xs-2 " id="">
+<div class="row padded-30" style="background-color:white;">
+<div class="col-xs-1 " id="">
 
-    </div>
-    <div class="col-xs-8">
-        <div id="Carousel" class="carousel slide">
-            <ol class="carousel-indicators">
-                <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#Carousel" data-slide-to="1"></li>
-                <li data-target="#Carousel" data-slide-to="2"></li>
-            </ol>
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
+</div>
+<div class="col-xs-10">
+    <div id="Carousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#Carousel" data-slide-to="1"></li>
+            <li data-target="#Carousel" data-slide-to="2"></li>
+        </ol>
+        <!-- TODO Make all sub-text a php substring function. -->
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
                     </div>
-                    <!--.row-->
-                </div>
-                <!--.item-->
-                <div class="item">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
                     </div>
-                    <!--.row-->
-                </div>
-                <!--.item-->
-                <div class="item">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
-                        <div class="col-md-3">
-                            <a href="#" class="thumbnail">
-                                <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                            </a>
-                        </div>
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
                     </div>
-                    <!--.row-->
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <!--.item-->
+                <!--.row-->
             </div>
-            <!--.carousel-inner--> <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-            <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+            <!--.item-->
+            <div class="item">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--.row-->
+            </div>
+            <!--.item-->
+            <div class="item">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="#" class="thumbnail fimage">
+                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
+                                </a>
+                            </li>
+                            <li class="list-group-item">$1999.99</li>
+                            <li class="list-group-item">
+                                <p>
+                                    Featureless CZ 805 Bren S1
+                                </p>
+                                <p>
+                                    (MSRP: $2,149.99)
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--.row-->
+            </div>
+            <!--.item-->
         </div>
-        <!--.Carousel-->
+        <!--.carousel-inner--><a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
     </div>
-    <div class="col-xs-2">
-        
-    </div>
+    <!--.Carousel-->
+</div>
+<div class="col-xs-1">
+
+</div>
 </div>
 <!-- End of 2nd row -->
-
-<!-- 3rd row -->
-<div class="row" style="" id="">
-    <div class="col-xs-12"id="map" style="width:100%;height:300px;background-color:yellow;">
-    </div>
 </div>
-<!-- End of 3rd row -->
+
+<div class="parallax-two">
+<h1>
+    Welcome to the One-Shot Shop!
+</h1>
+</div>
+
+<!--  -->
+
+<!-- 4th row -->
+<div class="row">
+<div class="col-xs-12" id="map" style="width:100%;height:400px;background-color:yellow;">
+</div>
+</div>
+<!-- End of 4th row -->
 
 
-
-
-
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
-<h1>Test!</h1>
 </div>
