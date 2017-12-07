@@ -3,32 +3,32 @@
 /**
  * user_model class
  * 
- * @property $id                                The id of the user in the database.
- * @property $username                          The user's username/display name.
- * @property $password                          The user's password.
- * @property $first_name                        The user's first name.
- * @property $last_name                         The user's last name.
- * @property $email                             The user's email.
+ * @property    int         $id                 The id of the user in the database.
+ * @property    string      $username           The user's username/display  name.
+ * @property    string      $password           The user's password.
+ * @property    string      $first_name         The user's first name.
+ * @property    string      $last_name          The user's last name.
+ * @property    string      $email              The user's email.
  *
  * -- Getters --
- * @method int getId()                          getter for $id property
- * @method string getUsername()                 getter for $username property
- * @method string getPassword()                 getter for $password property
- * @method string getFirdstName()               getter for $first_name property
- * @method string getLastName()                 getter for $last_name property
- * @method string getEmail()                    getter for $email property
+ * @method int get_id()                          getter for $id property
+ * @method string get_username()                 getter for $username property
+ * @method string get_password()                 getter for $password property
+ * @method string get_first_name()               getter for $first_name property
+ * @method string get_last_name()                 getter for $last_name property
+ * @method string get_email()                    getter for $email property
  * 
  * -- Setters --
- * @method void setId($id)                      setter for $id property
- * @method void setUsername($name)              setter for $username property
- * @method void setPassword($name)              setter for $password property
- * @method void setFirdstName($name)            setter for $first_name property
- * @method void setLastName($name)              setter for $last_name property
- * @method void setEmail($name)                 setter for $email property
+ * @method void set_id($id)                      setter for $id property
+ * @method void set_username($name)              setter for $username property
+ * @method void set_password($name)              setter for $password property
+ * @method void set_first_name($name)            setter for $first_name property
+ * @method void set_last_name($name)              setter for $last_name property
+ * @method void set_email($name)                 setter for $email property
  * 
  * @method void fetch_user_data($id)            fetches user data from the database based on $id.
  * @method void set_user_data($user)            sets up the user object using setters and data from the db.
- * @method mixed login_user($username, $password) Checks to see if username and password match db, returns id or false.
+ * @method mixed login_user($username, $password) Checks to see if username and password match db, returns id or FALSE.
  * @method void create_user_session()           Creates the user's session based on the properties of this model.
  * @method void destroy_user_session()          Destroys the user's session without destroying the entire session.
  * 
@@ -43,20 +43,20 @@ class User_model extends CI_Model
             $email;
 
     // Getters
-    public function getId() { return $this->id; }
-    public function getUsername() { return $this->username; }
-    public function getPassword() { return $this->password; }
-    public function getFirstName() { return $this->first_name; }
-    public function getLastName() { return $this->last_name; }
-    public function getEmail() { return $this->email; }
+    public function get_id() { return $this->id; }
+    public function get_username() { return $this->username; }
+    public function get_password() { return $this->password; }
+    public function get_first_name() { return $this->first_name; }
+    public function get_last_name() { return $this->last_name; }
+    public function get_email() { return $this->email; }
 
     // Setters
-    public function setId($id) { $this->id = $id; }
-    public function setUsername($name) { $this->username = $name; }
-    public function setPassword($pass) { $this->password = $pass; }
-    public function setFirstName($name) { $this->first_name = $name; }
-    public function setLastName($name) { $this->last_name = $name; }
-    public function setEmail($email) { $this->email = $email; }
+    public function set_id($id) { $this->id = $id; }
+    public function set_username($name) { $this->username = $name; }
+    public function set_password($pass) { $this->password = $pass; }
+    public function set_first_name($name) { $this->first_name = $name; }
+    public function set_last_name($name) { $this->last_name = $name; }
+    public function set_email($email) { $this->email = $email; }
 
     /**
      * fetch_user_data function
@@ -65,7 +65,7 @@ class User_model extends CI_Model
      * based on the id that is passed in as a parameter.
      * 
      * 
-     * @param [int] $id
+     * @param int $id
      * @uses set_user_data() to quickly set the user object.
      * @return void
      */
@@ -79,17 +79,17 @@ class User_model extends CI_Model
      * 
      * This function will be used to easily set the user object's attributes.
      *
-     * @param [Object] $user 
+     * @param Object $user 
      * @return void
      */
     public function set_user_data($user)
     {
-        $this->setId($user->id);
-        $this->setUsername($user->username);
-        $this->setPassword($user->password);
-        $this->setFirstName($user->first_name);
-        $this->setLastName($user->last_name);
-        $this->setEmail($user->email);
+        $this->set_id($user->id);
+        $this->set_username($user->username);
+        $this->set_password($user->password);
+        $this->set_first_name($user->first_name);
+        $this->set_last_name($user->last_name);
+        $this->set_email($user->email);
     }
 
     /**
@@ -97,8 +97,8 @@ class User_model extends CI_Model
      *
      * This function will check the username and password in the database to see if they match.
      * 
-     * @param [string] $username
-     * @param [string] $password
+     * @param string $username
+     * @param string $password
      * @return mixed
      */
     public function login_user($username, $password)
@@ -107,18 +107,23 @@ class User_model extends CI_Model
         $result = $this->db->get_where('users', array('username' => $username));
 
         // If there was a result->
-        if($result){
+        if($result)
+        {
             // Check to see if user's password matches input password.
             if(password_verify($password, $result->row(2)->password))	{
                 // Return user ID if it does.
                 return $result->row(0)->id;
-            } else {
-                // Return false if it does not match!
-                return false;
+            } 
+            else 
+            {
+                // Return FALSE if it does not match!
+                return FALSE;
             }
-        } else {
-            // Return false if there was no result! (meaning username did not match!)
-            return false;
+        } 
+        else 
+        {
+            // Return FALSE if there was no result! (meaning username did not match!)
+            return FALSE;
         }
 		
     }
@@ -143,31 +148,34 @@ class User_model extends CI_Model
         );
 
         // user setters to set the properties
-        $this->setUsername($data['username']);
-        $this->setPassword($encrypted_pass);
-        $this->setFirstName($data['first_name']);
-        $this->setLastName($data['last_name']);
-        $this->setEmail($data['email']);
+        $this->set_username($data['username']);
+        $this->set_password($encrypted_pass);
+        $this->set_first_name($data['first_name']);
+        $this->set_last_name($data['last_name']);
+        $this->set_email($data['email']);
 
         // insert the object into the database
         if($this->db->insert('users', array(
-                'username'  =>  $this->getUsername(),
-                'password'  =>  $this->getPassword(),
-                'first_name'=>  $this->getFirstName(),
-                'last_name' =>  $this->getLastName(),
-                'email'     =>  $this->getEmail()
-                ))) {
+                'username'  =>  $this->get_username(),
+                'password'  =>  $this->get_password(),
+                'first_name'=>  $this->get_first_name(),
+                'last_name' =>  $this->get_last_name(),
+                'email'     =>  $this->get_email()
+                ))) 
+        {
 
             // Return the ID
             return $this->db->insert_id();
 
-        } else {
+        } 
+        else 
+        {
 
             // log error
             db_elogger($this->db->error());   
 
-            // return false
-            return false;
+            // return FALSE
+            return FALSE;
 
         }
     }
@@ -183,10 +191,10 @@ class User_model extends CI_Model
     {
         // create array to pass into session
         $data = array(
-            'username'      =>  $this->getUsername(),
-            'first_name'    =>  $this->getFirstName(),
-            'last_name'     =>  $this->getLastName(),
-            'email'         =>  $this->getEmail(),
+            'username'      =>  $this->get_username(),
+            'first_name'    =>  $this->get_first_name(),
+            'last_name'     =>  $this->get_last_name(),
+            'email'         =>  $this->get_email(),
             'logged_in'     =>  TRUE
         );
 
@@ -212,5 +220,3 @@ class User_model extends CI_Model
     }
 
 }
-
-?>

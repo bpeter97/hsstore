@@ -1,6 +1,8 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
 
-if (!function_exists('db_elogger'))
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+if ( ! function_exists('db_elogger'))
 {
     function db_elogger($msg)
     {
