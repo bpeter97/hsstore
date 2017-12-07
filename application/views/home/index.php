@@ -1,311 +1,458 @@
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap" async defer></script>
+    <!-- WELCOME SECTION -->
+    <section id="welcome-section" class="bg-light ">
+        <div class="dark-overlay">
+            <div class="welcome-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="display-4 text-center d-none d-md-block">Welcome to the One-Shot Shop!</h1>
+                            <h1 class="display-5 text-center d-block d-none d-md-none">Welcome!</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED (LARGE+) SECTION -->
+    <section id="featured-section-lg" class="bg-light pb-5 d-none d-lg-block">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3 class="display-5 py-3">Featured Products</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="featuredCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#featuredCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#featuredCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED (Medium -> Large) SECTION -->
+    <section id="featured-section-md" class="bg-light pb-5 d-none d-sm-block d-lg-none d-xl-none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3 class="display-5 py-3">Featured Products</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="featuredCarouselMedium" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#featuredCarouselMedium" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#featuredCarouselMedium" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED (LARGE+) SECTION -->
+    <section id="featured-section-sm" class="bg-light pb-5 d-block d-sm-none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3 class="display-5 py-3">Featured Products</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="featuredCarouselSmall" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="card mx-3" style="width: 20rem;">
+                                        <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
+                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <a href="#" class="btn btn-primary">More Info</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#featuredCarouselSmall" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#featuredCarouselSmall" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NRA SECTION -->
+    <section id="nra-section" class="bg-light">
+        <div class="dark-overlay">
+            <div class="nra-inner">
+                <div class="container">
+                    <div class="row d-none d-md-block">
+                        <div class="col">
+                            <div class="d-flex flex-row nra-inner-cell">
+                                <div class="align-self-center text-center">
+                                    <img src="<?= base_url(); ?>assets/imgs/nra-logo.png" alt="" class="img-responsive w-50">
+                                </div>
+                                <div class="align-self-center text-center">
+                                    <a href="#">
+                                        <img src="<?= base_url(); ?>assets/imgs/nra-ad.png" alt="" class="img-responsive w-75">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-sm-block d-md-none">
+                        <div class="col">
+                            <div class="text-center nra-inner-cell" id="nra-small-inner">
+                                <span class="h3">
+                                    <a href="https://membership.nra.org/Join/Annuals/prospect?gclid=CjwKCAiAu4nRBRBKEiwANms5W4K_2OELrWGQb3QUnH0RlsQ68DDMt0v0ru6F-FPSaKuOLQpYaycnahoCSQwQAvD_BwE"><span>Join the NRA!</span><br><img src="<?= base_url(); ?>assets/imgs/nra-logo.png" alt=""></a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT TYPE SECTION -->
+    <!-- This will be 4 boxes of images that allow selection for auto filter on other page -->
+    <section id="product-section" class="pb-3 bg-dark text-muted">
+            <div class="container">
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="">
+                        <h3 class="display-5 py-3">Our Inventory</h3>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="p-3">
+                        <div class="imghvr-push-down">
+                            <img src="<?= base_url(); ?>assets/imgs/long-gun.png" class="img-responsive">
+                            <figcaption>
+                                <h1>Long Guns</h1>
+                                <div class="btn-group">
+                                <button type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
+                                </div>
+                            </figcaption>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="imghvr-push-down">
+                            <img src="<?= base_url(); ?>assets/imgs/pistols.jpg" class="img-responsive">
+                            <figcaption>
+                                <h1>Pistols</h1>
+                                <div class="btn-group">
+                                <button type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
+                                </div>
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="p-3">
+                        <div class="imghvr-push-down">
+                            <img src="<?= base_url(); ?>assets/imgs/shotgun.jpg" class="img-responsive">
+                            <figcaption>
+                                <h1>Shotguns</h1>
+                                <div class="btn-group">
+                                <button type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
+                                </div>
+                            </figcaption>
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <div class="imghvr-push-down">
+                            <img src="<?= base_url(); ?>assets/imgs/accessories.jpg" class="img-responsive">
+                            <figcaption>
+                                <h1>Accessories</h1>
+                                <div class="btn-group">
+                                <button type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
+                                </div>
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <!-- Google maps -->
+    <section id="map-section">
+        <div class="container-fluid">
+            <!-- <div class="row">
+                <div class="col text-center bg-dark text-muted">
+                    <h3 class="p-3">Location</h3>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col" id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section id="newsletter-section" class="bg-light">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center">
+                    <h3 class="display-5 py-3">Newsletter</h3>
+                </div>
+            </div>
+            <div class="container text-center">
+                <div class="row divider-row mx-auto"></div>
+            </div>
+            <div class="d-flex flex-row justify-content-center">
+            <div class="col-sm-6 p-4 text-center">
+                <p>Sign up for a monthly newsletter!</p>
+                    <form>
+                        <div class="input-group">
+                            <input type="text" name="newsletter-email" class="form-control" placeholder="Type your email!">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">Sign up!</button>
+                            </span>
+                        </div>
+                    </form>
+            </div>
+            </div>
+        </div>
+    </section>
 
     <script>
-        function initMap() {
-
-            var myLatLng = {lat: 36.359011, lng: -119.331300};
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-            center: myLatLng,
-            zoom: 13
-            });
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });
-
-        }
+            function initMap() {
+    
+                var myLatLng = {
+                    lat: 36.359011,
+                    lng: -119.331300
+                };
+    
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: myLatLng,
+                    zoom: 13
+                });
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'One-Shot Shop'
+                });
+    
+            }
     </script>
-
-<div class="parallax-one">
-<h1>
-        Welcome to the One-Shot Shop!
-    </h1>
-</div>
-<div class="container-fluid" id="content"></div>
-
-<!-- First row -->
-<div class="row featured_label" style="background-color:white;margin-bottom:-15px;">
-<h3>Featured Products</h3>
-</div>
-
-<!-- Second row -->
-<div class="row padded-30" style="background-color:white;">
-<div class="col-xs-1 " id="">
-
-</div>
-<div class="col-xs-10">
-    <div id="Carousel" class="carousel slide">
-        <ol class="carousel-indicators">
-            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#Carousel" data-slide-to="1"></li>
-            <li data-target="#Carousel" data-slide-to="2"></li>
-        </ol>
-        <!-- TODO Make all sub-text a php substring function. -->
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--.row-->
-            </div>
-            <!--.item-->
-            <div class="item">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--.row-->
-            </div>
-            <!--.item-->
-            <div class="item">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-3">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <a href="#" class="thumbnail fimage">
-                                    <img class="card-img-top" src="<?= base_url(); ?>assets/imgs/w_image.jpg" alt="Image">
-                                </a>
-                            </li>
-                            <li class="list-group-item">$1999.99</li>
-                            <li class="list-group-item">
-                                <p>
-                                    Featureless CZ 805 Bren S1
-                                </p>
-                                <p>
-                                    (MSRP: $2,149.99)
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--.row-->
-            </div>
-            <!--.item-->
-        </div>
-        <!--.carousel-inner--><a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-        <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
-    </div>
-    <!--.Carousel-->
-</div>
-<div class="col-xs-1">
-
-</div>
-</div>
-<!-- End of 2nd row -->
-</div>
-
-<div class="parallax-two">
-<h1>
-    Welcome to the One-Shot Shop!
-</h1>
-</div>
-
-<!--  -->
-
-<!-- 4th row -->
-<div class="row">
-<div class="col-xs-12" id="map" style="width:100%;height:400px;background-color:yellow;">
-</div>
-</div>
-<!-- End of 4th row -->
-
-
-</div>
