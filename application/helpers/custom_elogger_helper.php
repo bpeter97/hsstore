@@ -2,8 +2,8 @@
 
 if (!function_exists('db_elogger'))
 {
-    function db_elogger($enum, $emsg)
+    function db_elogger($msg)
     {
-        log_message('error', $enum . ': ' . $emsg);
+        log_message('error', $msg);
     }   
 }

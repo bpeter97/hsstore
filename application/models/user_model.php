@@ -30,6 +30,7 @@
  * @method void set_user_data($user)            sets up the user object using setters and data from the db.
  * @method mixed login_user($username, $password) Checks to see if username and password match db, returns id or false.
  * @method void create_user_session()           Creates the user's session based on the properties of this model.
+ * @method void destroy_user_session()          Destroys the user's session without destroying the entire session.
  * 
  */
 class User_model extends CI_Model
@@ -135,10 +136,9 @@ class User_model extends CI_Model
         // Encrypt the user's password.
         $encrypted_pass = password_hash(
             $data['password'],
-            PASSWORD_BCRYPT,
+            PASSWORD_DEFAULT,
             [
-                'cost' => 11,
-                'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)
+                'cost' => 10,
             ]
         );
 
@@ -150,15 +150,21 @@ class User_model extends CI_Model
         $this->setEmail($data['email']);
 
         // insert the object into the database
-        if($this->db->insert('users', $this)) {
+        if($this->db->insert('users', array(
+                'username'  =>  $this->getUsername(),
+                'password'  =>  $this->getPassword(),
+                'first_name'=>  $this->getFirstName(),
+                'last_name' =>  $this->getLastName(),
+                'email'     =>  $this->getEmail()
+                ))) {
 
             // Return the ID
-            return $this->db->last_id();
+            return $this->db->insert_id();
 
         } else {
 
             // log error
-            db_elogger($this->db->_error_number(), $this->db->_error_message());   
+            db_elogger($this->db->error());   
 
             // return false
             return false;
@@ -186,6 +192,23 @@ class User_model extends CI_Model
 
         // insert data into session.
         $this->session->set_userdata($data);
+    }
+
+    /**
+     * destroy_user_session function
+     * 
+     * This function will destroy a user session without destroying the entire session.
+     *
+     * @return void
+     */
+    public function destroy_user_session()
+    {
+        // create array to pass into session
+        unset($_SESSION['username']);
+        unset($_SESSION['first_name']);
+        unset($_SESSION['last_name']);
+        unset($_SESSION['email']);
+        unset($_SESSION['logged_in']);
     }
 
 }

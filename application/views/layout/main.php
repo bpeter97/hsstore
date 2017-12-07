@@ -12,9 +12,31 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/style.css">
 </head>
 <body>
+
+    <!-- ALERT SECTION -->
+    <?php if($this->session->flashdata('error_msg') || $this->session->flashdata('success_msg')): ?>
+    <section id="alert-section">
+        <?php if($this->session->flashdata('success_msg')): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= $this->session->flashdata('success_msg'); ?>
+        <?php else: ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?php
+                foreach($this->session->flashdata('error_msg') as $error)
+                {
+                    echo $error;
+                    break;
+                }
+            ?>
+            <?php endif; ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </div>
+    </section>
+    <?php endif; ?>
     
     <!-- CONTACT SECTION -->
-    <session id="contact-section" class="py-2 col-md-12 d-none d-md-block">
+    <section id="contact-section" class="py-2 col-md-12 d-none d-md-block">
         <div class="container-fluid">
             <div class="d-flex flex-row justify-content-center justify-content-between">
                 <div class="p-1 align-self-center">
@@ -32,7 +54,7 @@
                 </div>
             </div>
         </div>
-    </session>
+    </section>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top" id="topNavbar">
@@ -72,12 +94,21 @@
                             <span>7 - Items</span>
                         </a>
                     </li>
+                    <?php if($this->session->has_userdata('logged_in')): ?>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= $this->session->userdata('username'); ?></a>
+                        <div class="dropdown-menu">
+                            <a href="<?= base_url(); ?>users/logout" class="dropdown-item">Logout</a>
+                        </div>
+                    </li>
+                    <?php else: ?>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="" class="nav-link" data-toggle="modal" data-target="#login-modal">
                             <i class="fa fa-user"></i>
-                            <span>Username</span>
+                            <span>Login / Register</span>
                         </a>
                     </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         <!-- </div> -->
@@ -214,6 +245,163 @@
             <i class="fa fa-2x fa-arrow-circle-up"></i>
         </span>
     </div>
+
+    <!-- Login / Register Modal -->
+    <div id="login-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Login or Register</h4>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="lead">Login</p>
+                                        <?= form_open('users/login'); ?>
+                                            <div class="form-group">
+                                                <?php
+                                                    $data = array(
+                                                        'class'         =>  'form-control',
+                                                        'name'          =>  'username',
+                                                        'placeholder'   =>  'Enter you username'
+                                                    );
+                                                    echo form_input($data);
+                                                ?>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php
+                                                    $data = array(
+                                                        'class'         =>  'form-control',
+                                                        'name'          =>  'password',
+                                                        'placeholder'   =>  'Enter your password'
+                                                    );
+                                                    echo form_password($data);
+                                                ?>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php 
+                                                    $data = array(
+                                                        'class' => 'btn btn-primary',
+                                                        'name' => 'submit',
+                                                        'value' => 'Login'
+                                                    );
+                                                    echo form_submit($data);
+                                                ?>
+                                            </div>
+                                        <?= form_close(); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 h-100">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                                        <?= form_open('users/register'); ?>
+                                            <div class="form-group">
+                                                <?php
+                                                    $data = array(
+                                                        'class'         =>  'form-control',
+                                                        'name'          =>  'username',
+                                                        'placeholder'   =>  'Enter you username'
+                                                    );
+                                                    echo form_input($data);
+                                                ?>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php
+                                                    $data = array(
+                                                        'class'         =>  'form-control',
+                                                        'name'          =>  'password',
+                                                        'placeholder'   =>  'Enter your password'
+                                                    );
+                                                    echo form_password($data);
+                                                ?>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php
+                                                    $data = array(
+                                                        'class'         =>  'form-control',
+                                                        'name'          =>  'confirm_password',
+                                                        'placeholder'   =>  'Re-enter your password'
+                                                    );
+                                                    echo form_password($data);
+                                                ?>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php
+                                                    $data = array(
+                                                        'class'         =>  'form-control',
+                                                        'name'          =>  'first_name',
+                                                        'placeholder'   =>  'Enter your first name'
+                                                    );
+                                                    echo form_input($data);
+                                                ?>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php
+                                                    $data = array(
+                                                        'class'         =>  'form-control',
+                                                        'name'          =>  'last_name',
+                                                        'placeholder'   =>  'Enter your last name'
+                                                    );
+                                                    echo form_input($data);
+                                                ?>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php
+                                                    $data = array(
+                                                        'class'         =>  'form-control',
+                                                        'name'          =>  'email',
+                                                        'placeholder'   =>  'Enter your email address'
+                                                    );
+                                                    echo form_input($data);
+                                                ?>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="form-check-label">
+                                                <?php
+                                                    $data = array(
+                                                        'name'          =>  'tos',
+                                                        'value'         =>  'accept',
+                                                        FALSE,
+                                                        'class'         =>  'form-check-input',
+                                                        'type'          =>  'checkbox',
+                                                        'style'         =>  'margin-top: 0.4rem;'
+                                                    );
+                                                    echo form_checkbox($data);
+                                                ?>
+                                            I agree to the <a href="#">Terms of Service</a>.
+                                            </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php 
+                                                    $data = array(
+                                                        'class' => 'btn btn-primary',
+                                                        'name' => 'submit',
+                                                        'value' => 'Register'
+                                                    );
+                                                    echo form_submit($data);
+                                                ?>
+                                            </div>
+                                        <?= form_close(); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 
     <!-- JavaScript -->
     <script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
