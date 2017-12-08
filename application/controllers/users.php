@@ -7,9 +7,6 @@ class Users extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
-        // Load the models needed.
-        $this->load->model('user_model');
     }
 
     public function login()
@@ -70,7 +67,7 @@ class Users extends CI_Controller
         $this->form_validation->set_rules('last_name','Last Name','trim|required|min_length[2]');
         $this->form_validation->set_rules('email','Email','trim|required|min_length[5]|valid_email');
 
-        if($this->form_validation->run() == FALSE){
+        if( ! $this->form_validation->run()){
             $this->session->set_flashdata('error_msg', $this->form_validation->error_array());
             redirect('home');
         } else {
@@ -103,5 +100,3 @@ class Users extends CI_Controller
     }
 
 }
-
-?>

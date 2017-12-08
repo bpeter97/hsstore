@@ -42,6 +42,7 @@ class Product_model extends CI_Model
             $price,
             $quantity,
             $featured,
+            $image,
             $description;
 
     // Getters
@@ -50,6 +51,7 @@ class Product_model extends CI_Model
     public function get_price() { return $this->price; }
     public function get_quantity() { return $this->quantity; }
     public function get_featured() { return $this->featured; }
+    public function get_image() { return $this->image; }
     public function get_description() { return $this->description; }
 
     // Setters
@@ -58,6 +60,7 @@ class Product_model extends CI_Model
     public function set_price($price) { $this->price = $price; }
     public function set_quantity($qty) { $this->quantity = $qty; }
     public function set_featured($bool) { $this->featured = $bool; }
+    public function set_image($image) { $this->image = $image; }
     public function set_description($desc) { $this->description = $desc; }
 
     /**
@@ -70,7 +73,18 @@ class Product_model extends CI_Model
     public function fetch_all_products()
     {
         // Return all of the products from the database.
-        return $this->db->get('products');
+        $products_array = $this->db->get('products')->result_array();
+
+        $products = array();
+
+        foreach($products_array as $prod)
+        {
+            $product = new Product_model();
+            $product->set_product_data($prod, 'array');
+            array_push($products, $product);
+        }
+
+        return $products;
     }
 
     /**
@@ -130,6 +144,7 @@ class Product_model extends CI_Model
             $this->set_price($obj['price']);
             $this->set_quantity($obj['quantity']);
             $this->set_featured($obj['featured']);
+            $this->set_featured($obj['image']);
             $this->set_description($obj['description']);
         } 
         elseif($type == 'object')
@@ -140,6 +155,7 @@ class Product_model extends CI_Model
             $this->set_price($obj->price);
             $this->set_quantity($obj->quantity);
             $this->set_featured($obj->featured);
+            $this->set_featured($obj->image);
             $this->set_description($obj->description);
         }
     }
@@ -185,6 +201,7 @@ class Product_model extends CI_Model
         $this->set_price($data['price']);
         $this->set_quantity($data['quantity']);
         $this->set_featured($data['featured']);
+        $this->set_image($data['image']);
         $this->set_description($data['description']);
 
         // insert the object into the database
@@ -193,6 +210,7 @@ class Product_model extends CI_Model
                 'price'         =>  $this->get_price(),
                 'quantity'      =>  $this->get_quantity(),
                 'featured'      =>  $this->get_featured(),
+                'image'         =>  $this->get_image(),
                 'description'   =>  $this->get_description()
                 ))) 
         {

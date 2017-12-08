@@ -59,10 +59,10 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top" id="topNavbar">
         <!-- <div class="container-fluid"> -->
-            <a href="index.html" class="navbar-brand py-0 pl-3">
-                <img src="<?= base_url(); ?>assets/imgs/logo.jpg" alt="">
+            <a href="<?= base_url(); ?>" class="navbar-brand py-0 pl-3">
+                <img src="<?= base_url(); ?>assets/img/logo.jpg" alt="">
             </a>
-            <a href="index.html" class="navbar-brand d-block d-none d-sm-none">
+            <a href="<?= base_url(); ?>" class="navbar-brand d-block d-none d-sm-none">
                     One-Shot Shop
                 </a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -98,6 +98,9 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= $this->session->userdata('username'); ?></a>
                         <div class="dropdown-menu">
+                            <?php if($this->user_model->check_user_type($this->session->userdata('user_id'), 'Admin')): ?>
+                                <a href="<?= base_url(); ?>admin" class="dropdown-item">Admin</a>
+                            <?php endif; ?>
                             <a href="<?= base_url(); ?>users/logout" class="dropdown-item">Logout</a>
                         </div>
                     </li>

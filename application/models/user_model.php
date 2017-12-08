@@ -40,6 +40,7 @@ class User_model extends CI_Model
             $password,
             $first_name,
             $last_name,
+            $user_type,
             $email;
 
     // Getters
@@ -48,6 +49,7 @@ class User_model extends CI_Model
     public function get_password() { return $this->password; }
     public function get_first_name() { return $this->first_name; }
     public function get_last_name() { return $this->last_name; }
+    public function get_user_type() { return $this->user_type; }
     public function get_email() { return $this->email; }
 
     // Setters
@@ -56,6 +58,7 @@ class User_model extends CI_Model
     public function set_password($pass) { $this->password = $pass; }
     public function set_first_name($name) { $this->first_name = $name; }
     public function set_last_name($name) { $this->last_name = $name; }
+    public function set_user_type($type) { $this->user_type = $type; }
     public function set_email($email) { $this->email = $email; }
 
     /**
@@ -89,6 +92,7 @@ class User_model extends CI_Model
         $this->set_password($user->password);
         $this->set_first_name($user->first_name);
         $this->set_last_name($user->last_name);
+        $this->set_user_type($user->user_type);
         $this->set_email($user->email);
     }
 
@@ -152,6 +156,7 @@ class User_model extends CI_Model
         $this->set_password($encrypted_pass);
         $this->set_first_name($data['first_name']);
         $this->set_last_name($data['last_name']);
+        $this->set_user_type('User');
         $this->set_email($data['email']);
 
         // insert the object into the database
@@ -160,6 +165,7 @@ class User_model extends CI_Model
                 'password'  =>  $this->get_password(),
                 'first_name'=>  $this->get_first_name(),
                 'last_name' =>  $this->get_last_name(),
+                'user_type' =>  $this->get_user_type(),
                 'email'     =>  $this->get_email()
                 ))) 
         {
@@ -191,6 +197,7 @@ class User_model extends CI_Model
     {
         // create array to pass into session
         $data = array(
+            'user_id'       =>  $this->get_id(),
             'username'      =>  $this->get_username(),
             'first_name'    =>  $this->get_first_name(),
             'last_name'     =>  $this->get_last_name(),
@@ -212,11 +219,25 @@ class User_model extends CI_Model
     public function destroy_user_session()
     {
         // create array to pass into session
+        unset($_SESSION['user_id']);
         unset($_SESSION['username']);
         unset($_SESSION['first_name']);
         unset($_SESSION['last_name']);
         unset($_SESSION['email']);
         unset($_SESSION['logged_in']);
+    }
+
+    public function check_user_type($id, $type)
+    {
+        $this->fetch_user_data($id);
+        if($this->get_user_type() == $type)
+        {
+            return TRUE;
+        } 
+        else
+        {
+            return FALSE;
+        }
     }
 
 }
