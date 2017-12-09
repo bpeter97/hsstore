@@ -26,114 +26,41 @@
                 <div class="col-sm-12">
                     <div id="featuredCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <?php 
+                                $i = 1;
+                                $x = 0;
+                                $start = [0, 4, 8];
+                                $end = [3, 7, 11];
+                                $total = 0;
+                                foreach($end as $k => $c)
+                                {
+                                    if(count($featured_products) < $c)
+                                    {
+                                        $total = $k+1;
+                                        break;
+                                    }
+                                }
+                            ?>
+                            <?php while ($i != $total): ?>
+                            <div class="carousel-item <?php if($i == 1) echo 'active'; ?>">
                                 <div class="d-flex flex-row justify-content-center">
+                                    <?php foreach($featured_products as $k => $featured_product): ?>
+                                    <?php if($k < $start[$x]) continue; ?>
                                     <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
+                                        <img class="card-img-top" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
+                                            <p class="card-text"><?= $featured_product->get_description(); ?></p>
                                             <a href="#" class="btn btn-primary">More Info</a>
                                         </div>
                                     </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
+                                    <?php if($k >= $end[$x]) break; ?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <div class="d-flex flex-row justify-content-center">
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex flex-row justify-content-center">
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php $i++; ?>
+                            <?php $x++; ?>
+                            <?php endwhile; ?>
                         </div>
                         <a class="carousel-control-prev" href="#featuredCarousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -161,66 +88,43 @@
                 <div class="col-sm-12">
                     <div id="featuredCarouselMedium" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <?php 
+                                $i = 1;
+                                $x = 0;
+                                $start = [0, 2, 4, 6, 8, 10];
+                                $end = [1, 3, 5, 7, 9, 11];
+                                $total = 0;
+                                foreach($end as $k => $c)
+                                {
+                                    if(count($featured_products) < $c)
+                                    {
+                                        $total = $k+1;
+                                        break;
+                                    }
+                                }
+                            ?>
+                            <?php while ($i != $total): ?>
+                            <div class="carousel-item <?php if($i == 1) echo 'active'; ?>">
                                 <div class="d-flex flex-row justify-content-center">
+                                    <?php foreach($featured_products as $k => $featured_product): ?>
+                                    <?php if($k < $start[$x]) continue; ?>
                                     <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
+                                        <img class="card-img-top" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
+                                            <p class="card-text"><?= $featured_product->get_description(); ?></p>
                                             <a href="#" class="btn btn-primary">More Info</a>
                                         </div>
                                     </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
+                                    <?php if($k >= $end[$x]) break; ?>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <div class="d-flex flex-row justify-content-center">
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex flex-row justify-content-center">
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php 
+                                $i++;
+                                $x++;
+                            ?>
+                            <?php endwhile; ?>
                         </div>
                         <a class="carousel-control-prev" href="#featuredCarouselMedium" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -248,43 +152,22 @@
                 <div class="col-sm-12">
                     <div id="featuredCarouselSmall" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <?php $x = 1; ?>
+                            <?php foreach($featured_products as $k => $featured_product): ?>
+                            <div class="carousel-item <?php if($x == 1) echo 'active'; ?>">
                                 <div class="d-flex flex-row justify-content-center">
                                     <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
+                                        <img class="card-img-top" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
+                                            <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
+                                            <p class="card-text"><?= $featured_product->get_description(); ?></p>
                                             <a href="#" class="btn btn-primary">More Info</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <div class="d-flex flex-row justify-content-center">
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="d-flex flex-row justify-content-center">
-                                    <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>assets/img/w_image.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Featureless CZ 805 Bren S1</h4>
-                                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dignissimos? (MSRP: $2,149.99)</p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                            <?php $x++; ?>
+                            <?php endforeach; ?>
                         </div>
                         <a class="carousel-control-prev" href="#featuredCarouselSmall" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

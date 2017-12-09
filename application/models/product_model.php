@@ -67,6 +67,7 @@ class Product_model extends CI_Model
      * fetch_all_products function
      *
      * This function simply returns all products in the database.
+     * MAX: 12 FEATURED PRODUCTS AT A TIME!
      * 
      * @return void
      */
@@ -121,7 +122,18 @@ class Product_model extends CI_Model
     public function fetch_featured_products()
     {
         // Returns all of the products that are featured.
-        return $this->db->get_where('products', ['featured' => 'TRUE']);
+        $products_array = $this->db->get_where('products', ['featured' => 'on'])->result_array();
+
+        $products = array();
+        
+        foreach($products_array as $prod)
+        {
+            $product = new Product_model();
+            $product->set_product_data($prod, 'array');
+            array_push($products, $product);
+        }
+
+        return $products;
     }
 
     /**
@@ -144,7 +156,7 @@ class Product_model extends CI_Model
             $this->set_price($obj['price']);
             $this->set_quantity($obj['quantity']);
             $this->set_featured($obj['featured']);
-            $this->set_featured($obj['image']);
+            $this->set_image($obj['image']);
             $this->set_description($obj['description']);
         } 
         elseif($type == 'object')
@@ -155,7 +167,7 @@ class Product_model extends CI_Model
             $this->set_price($obj->price);
             $this->set_quantity($obj->quantity);
             $this->set_featured($obj->featured);
-            $this->set_featured($obj->image);
+            $this->set_image($obj->image);
             $this->set_description($obj->description);
         }
     }
