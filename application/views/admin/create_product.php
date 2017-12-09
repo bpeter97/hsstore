@@ -110,6 +110,17 @@
                                         <small><?= form_error('featured', '<div class="p-0 m-0">', '</div>'); ?></small>
                                     </div>
                                 <?php endif; ?>
+                                <div class="form-group row">
+                                    <label for="description" class="col-sm-2 col-form-label">Categories</label>
+                                    <div class="col-sm-10">
+                                        <select multiple class="form-control" name="categories[]">
+                                            <?php foreach($categories as $category): ?>
+                                                <option value="<?= $category['id']; ?>"><?= $category['name']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <small id="categoryHelp" class="form-text font-italic pl-1">Hold control and left click on categories to select multiple.</small>
+                                    </div>
+                                </div>
                                 <div class="form-group row text-right">
                                     <div class="col-sm-12" id="submit-button">
                                         <button type="submit" class="btn btn-labeled btn-success">
@@ -117,7 +128,6 @@
                                         </button>
                                     </div>
                                 </div>
-                                <br>
                             <?= form_close(); ?>
                         </div>
                     </div>

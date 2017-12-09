@@ -31,6 +31,9 @@
                 $this->form_validation->set_rules('description','Description','required|min_length[3]');
 
                 if( ! $this->form_validation->run()){
+
+                    $data['categories'] = $this->categories_model->fetch_all_categories();
+
                     $data['main_view'] = 'admin/create_product';
                     $this->load->view('layout/admin', $data);
                 } else {
@@ -55,7 +58,7 @@
                             'image' =>   $this->upload->file_name
                         );
     
-                        if( ! $this->product_model->create_product($data))
+                        if( ! $new_id = $this->product_model->create_product($data))
                         {
                             $this->session->set_flashdata('error_msg', array('The product was unable to be created.'));
     
@@ -64,17 +67,21 @@
                         } 
                         else 
                         {
+
+                            foreach($this->input->post('categories') as $category)
+                            {
+                                $this->categories_model->create_relationship($new_id, $category);
+                            }
+                            
                             $this->session->set_flashdata('success_msg', 'The product was created successfully!');
     
-                            $data['main_view'] = 'admin/products';
-                            $this->load->view('layout/admin', $data);
+                            redirect('admin/products');
                         }
                     }
                     else 
                     {
                         $this->session->set_flashdata('error_msg', array('The was an issue uploading the image.'));
-                        $data['main_view'] = 'admin/products';
-                        $this->load->view('layout/admin', $data);
+                        redirect('admin/products');
                     }
 
                     
@@ -89,6 +96,18 @@
                 $this->load->view('layout/admin', $data);
             }
         }
+
+        // public function post_test()
+        // {
+        //     echo '<pre>';
+        //     var_dump($_POST);
+        //     echo '</pre>';
+
+        //     foreach($this->input->post('categories') as $category_id)
+        //     {
+        //         echo $category_id;
+        //     }
+        // }
 
     }
 
