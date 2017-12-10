@@ -47,10 +47,10 @@
                                     <?php foreach($featured_products as $k => $featured_product): ?>
                                     <?php if($k < $start[$x]) continue; ?>
                                     <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
+                                        <img class="card-img-top img-responsive" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
-                                            <p class="card-text"><?= substr($featured_product->get_description(), 0, 50).'...'; ?></p>
+                                            <p class="card-text"><?= substr($featured_product->get_description(), 0, 75).'...'; ?></p>
                                             <a href="#" class="btn btn-primary">More Info</a>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div id="featuredCarouselMedium" class="carousel slide" data-ride="carousel">
+                    <div id="featuredCarouselMedium" class="carousel slide" data-ride="carousel" style="min-height: 420px; max-height:420px;">
                         <div class="carousel-inner">
                             <?php 
                                 $i = 1;
@@ -112,7 +112,7 @@
                                         <img class="card-img-top" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
-                                            <p class="card-text"><?= $featured_product->get_description(); ?></p>
+                                            <p class="card-text"><?= substr($featured_product->get_description(), 0, 75).'...'; ?></p>
                                             <a href="#" class="btn btn-primary">More Info</a>
                                         </div>
                                     </div>
@@ -150,17 +150,17 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div id="featuredCarouselSmall" class="carousel slide" data-ride="carousel">
+                    <div id="featuredCarouselSmall" class="carousel slide" data-ride="carousel" style="min-height: 420px; max-height:420px;">
                         <div class="carousel-inner">
                             <?php $x = 1; ?>
                             <?php foreach($featured_products as $k => $featured_product): ?>
                             <div class="carousel-item <?php if($x == 1) echo 'active'; ?>">
                                 <div class="d-flex flex-row justify-content-center">
                                     <div class="card mx-3" style="width: 20rem;">
-                                        <img class="card-img-top" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
+                                        <img class="card-img-top img-responsive" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
-                                            <p class="card-text"><?= $featured_product->get_description(); ?></p>
+                                            <p class="card-text"><?= substr($featured_product->get_description(), 0, 75).'...'; ?></p>
                                             <a href="#" class="btn btn-primary">More Info</a>
                                         </div>
                                     </div>

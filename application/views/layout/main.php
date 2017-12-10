@@ -1,3 +1,22 @@
+<?php
+    $home_active = '';
+    $inventory_active = '';
+    $about_us_active = '';
+    $contact_active = '';
+
+    if($this->uri->segment(1) == 'products') {
+        $inventory_active = 'active';
+    } else if ($this->uri->segment(1) ==  'about') {
+        $about_us_active = 'active';
+    } else if ($this->uri->segment(1) ==  'contact') {
+        $contact_active = 'active';
+    } else {
+        $home_active = 'active';
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,20 +90,20 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link active">
+                        <a href="<?= base_url(); ?>" class="nav-link <?= $home_active; ?>">
                             <span>
                                 Home
                             </span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Inventory</a>
+                        <a href="<?= base_url(); ?>products" class="nav-link <?= $inventory_active; ?>">Inventory</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
+                        <a href="#" class="nav-link <?= $about_us_active; ?>">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contact</a>
+                        <a href="#" class="nav-link <?= $contact_active; ?>">Contact</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -442,6 +461,57 @@
             
         });
     </script>
+
+<script type="text/javascript">
+
+	var page = 1;
+    var finished = false;
+
+	$(window).scroll(function() {
+        if(!finished){
+            if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                page++;
+                console.log(page);
+                loadMoreData(page);
+	        }
+        } else {
+            $('#products-finished').show();
+        }
+	});
+
+	function loadMoreData(page){
+
+        $.ajax({
+            url: '?page=' + page,
+            type: "get",
+            beforeSend: function()
+            {
+                $('.ajax-load').show();
+            }
+        })
+
+        .done(function(data)
+        {
+            if(data == ''){
+                finished = true;
+                $('#products-finished').show();
+                $('.ajax-load').hide();
+                return;
+
+            } else {
+                $('.ajax-load').hide();
+                $("#post-data").append(data);
+            }
+
+        })
+
+        .fail(function(jqXHR, ajaxOptions, thrownError)
+        {
+                alert('server not responding...');
+        });
+
+	}
+</script>
 
 </body>
 </html>

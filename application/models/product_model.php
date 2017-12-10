@@ -88,6 +88,27 @@ class Product_model extends CI_Model
         return $products;
     }
 
+    public function fetch_products_limited($start, $limit)
+    {
+        $products_array = $this->db->limit($start, $limit)->get("products")->result_array(); 
+
+        $products = array();
+        
+        foreach($products_array as $prod)
+        {
+            $product = new Product_model();
+            $product->set_product_data($prod, 'array');
+            array_push($products, $product);
+        }
+
+        return $products;
+    }
+
+    public function count_products()
+    {
+        return $this->db->get('products')->num_rows();
+    }
+
     /**
      * fetch_product function
      * 
