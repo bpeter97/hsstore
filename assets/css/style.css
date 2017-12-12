@@ -488,3 +488,20 @@ body {
   background: #e1e1e1;
   padding: 10px 0px;
   width: 100%; }
+
+#product-info-section {
+  background-color: white; }
+  @media screen and (min-width: 0px) {
+    #product-info-section h4, #product-info-section h5 {
+      font-size: 1.5rem; }
+    #product-info-section #large-buttons {
+      display: none; }
+    #product-info-section #small-buttons {
+      display: block; } }
+  @media screen and (min-width: 768px) {
+    #product-info-section h4, #product-info-section h5 {
+      font-size: 3rem; }
+    #product-info-section #small-buttons {
+      display: none; }
+    #product-info-section #large-buttons {
+      display: block; } }

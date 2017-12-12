@@ -423,8 +423,6 @@
         </div>
     </div>
 
-    
-
     <!-- JavaScript -->
     <script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
     <script src="<?= base_url(); ?>assets/js/popper.min.js"></script>
@@ -462,6 +460,7 @@
         });
     </script>
 
+<!-- Infinit scrolling for products page. -->
 <script type="text/javascript">
 
 	var page = 1;
@@ -512,6 +511,7 @@
 
 	}
 </script>
+<!-- End of infinite scrolling for product page -->
 
 </body>
 </html>

@@ -47,12 +47,15 @@
                                     <?php foreach($featured_products as $k => $featured_product): ?>
                                     <?php if($k < $start[$x]) continue; ?>
                                     <div class="card mx-3" style="width: 20rem;">
+                                    <?php $hidden = array('id'=>$featured_product->get_id()); ?>
+                                    <?= form_open('products/view', '', $hidden); ?>
                                         <img class="card-img-top img-responsive" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
                                             <p class="card-text"><?= substr($featured_product->get_description(), 0, 75).'...'; ?></p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
+                                            <button type="submit" class="btn btn-primary">More Info</button>
                                         </div>
+                                        <?= form_close(); ?>
                                     </div>
                                     <?php if($k >= $end[$x]) break; ?>
                                     <?php endforeach; ?>
@@ -109,12 +112,15 @@
                                     <?php foreach($featured_products as $k => $featured_product): ?>
                                     <?php if($k < $start[$x]) continue; ?>
                                     <div class="card mx-3" style="width: 20rem;">
+                                    <?php $hidden = array('id'=>$featured_product->get_id()); ?>
+                                    <?= form_open('products/view', '', $hidden); ?>
                                         <img class="card-img-top" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
                                             <p class="card-text"><?= substr($featured_product->get_description(), 0, 75).'...'; ?></p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
+                                            <button type="submit" class="btn btn-primary">More Info</button>
                                         </div>
+                                    <?= form_close(); ?>
                                     </div>
                                     <?php if($k >= $end[$x]) break; ?>
                                     <?php endforeach; ?>
@@ -157,12 +163,15 @@
                             <div class="carousel-item <?php if($x == 1) echo 'active'; ?>">
                                 <div class="d-flex flex-row justify-content-center">
                                     <div class="card mx-3" style="width: 20rem;">
+                                    <?php $hidden = array('id'=>$featured_product->get_id()); ?>
+                                    <?= form_open('products/view', '', $hidden); ?>
                                         <img class="card-img-top img-responsive" src="<?= base_url(); ?>uploads/<?= $featured_product->get_image(); ?>" alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title"><?= $featured_product->get_name(); ?></h4>
                                             <p class="card-text"><?= substr($featured_product->get_description(), 0, 75).'...'; ?></p>
-                                            <a href="#" class="btn btn-primary">More Info</a>
+                                            <button type="submit" class="btn btn-primary">More Info</button>
                                         </div>
+                                    <?= form_close(); ?>
                                     </div>
                                 </div>
                             </div>

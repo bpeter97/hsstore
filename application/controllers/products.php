@@ -5,19 +5,21 @@
     class Products extends CI_Controller 
     {
 
-        private $per_page = 6;
-
         public function index()
         {
+            
+            $per_page = 6;
+
             $count = $this->product_model->count_products();
             
-            if(!empty($this->input->get("page"))){
-                $start = ceil($this->input->get("page") * $this->per_page);             
+            if(!empty($this->input->get("page")))
+            {
 
-                $data['products'] = $this->product_model->fetch_products_limited($start, $start - $this->per_page);
+                $start = ceil($this->input->get("page") * $per_page);             
+
+                $data['products'] = $this->product_model->fetch_products_limited($start, $start - $per_page);
                 $result = $this->load->view('products/product_listing', $data);
 
-                echo json_encode($result);
             }
             else
             {
@@ -27,6 +29,26 @@
                 $this->load->view('layout/main', $data);
             
             }
+        }
+
+        public function view()
+        {
+            $this->form_validation->set_rules('id','ID','integer|trim|required|min_length[1]|max_length[5]');
+
+            if( ! $this->form_validation->run() )
+            {
+                redirect('products');
+            }
+            else 
+            {
+                $this->product_model->fetch_product($this->input->post('id'));
+
+                $data['product'] = $this->product_model;
+                
+                $data['main_view'] = 'products/product_info';
+                $this->load->view('layout/main', $data);
+            }
+            
         }
 
     }
