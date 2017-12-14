@@ -1,14 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Users Controller
+ * 
+ * @method login()      Logs the user in.
+ * @method register()   Registers a new user account.
+ * @method logout()     Logs the user out.
+ * 
+ */ 
 class Users extends CI_Controller 
 {
 
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
+    /**
+     * login() function
+     * 
+     * This function logs the user in.
+     *
+     * @uses User_model
+     * @return void
+     */
     public function login()
     {
         // Do validation
@@ -56,6 +67,14 @@ class Users extends CI_Controller
         }
     }
 
+    /**
+     * register() function
+     * 
+     * This function registers a new user in the db.
+     * 
+     * @uses User_model
+     * @return void
+     */
     public function register()
     {
         // Form validation
@@ -88,6 +107,14 @@ class Users extends CI_Controller
         }
     }
 
+    /**
+     * logout() function
+     *
+     * Destroys the user session.
+     * 
+     * @uses User_model
+     * @return void
+     */
     public function logout()
     {
         // Log the user out.

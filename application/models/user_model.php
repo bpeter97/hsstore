@@ -2,13 +2,14 @@
 
 /**
  * user_model class
+ * @author Brian L. Peter Jr.
  * 
- * @property    int         $id                 The id of the user in the database.
- * @property    string      $username           The user's username/display  name.
- * @property    string      $password           The user's password.
- * @property    string      $first_name         The user's first name.
- * @property    string      $last_name          The user's last name.
- * @property    string      $email              The user's email.
+ * @property    int         $_id                 The id of the user in the database.
+ * @property    string      $_username           The user's username/display  name.
+ * @property    string      $_password           The user's password.
+ * @property    string      $_first_name         The user's first name.
+ * @property    string      $_last_name          The user's last name.
+ * @property    string      $_email              The user's email.
  *
  * -- Getters --
  * @method int get_id()                          getter for $id property
@@ -31,35 +32,36 @@
  * @method mixed login_user($username, $password) Checks to see if username and password match db, returns id or FALSE.
  * @method void create_user_session()           Creates the user's session based on the properties of this model.
  * @method void destroy_user_session()          Destroys the user's session without destroying the entire session.
+ * @method check_user_type()                    Checks to see if the user is of type $type, which is passed in as a parameter.
  * 
  */
 class User_model extends CI_Model
 {
-    private $id,
-            $username,
-            $password,
-            $first_name,
-            $last_name,
-            $user_type,
-            $email;
+    private $_id,
+            $_username,
+            $_password,
+            $_first_name,
+            $_last_name,
+            $_user_type,
+            $_email;
 
     // Getters
-    public function get_id() { return $this->id; }
-    public function get_username() { return $this->username; }
-    public function get_password() { return $this->password; }
-    public function get_first_name() { return $this->first_name; }
-    public function get_last_name() { return $this->last_name; }
-    public function get_user_type() { return $this->user_type; }
-    public function get_email() { return $this->email; }
+    public function get_id() { return $this->_id; }
+    public function get_username() { return $this->_username; }
+    public function get_password() { return $this->_password; }
+    public function get_first_name() { return $this->_first_name; }
+    public function get_last_name() { return $this->_last_name; }
+    public function get_user_type() { return $this->_user_type; }
+    public function get_email() { return $this->_email; }
 
     // Setters
-    public function set_id($id) { $this->id = $id; }
-    public function set_username($name) { $this->username = $name; }
-    public function set_password($pass) { $this->password = $pass; }
-    public function set_first_name($name) { $this->first_name = $name; }
-    public function set_last_name($name) { $this->last_name = $name; }
-    public function set_user_type($type) { $this->user_type = $type; }
-    public function set_email($email) { $this->email = $email; }
+    public function set_id($id) { $this->_id = $id; }
+    public function set_username($name) { $this->_username = $name; }
+    public function set_password($pass) { $this->_password = $pass; }
+    public function set_first_name($name) { $this->_first_name = $name; }
+    public function set_last_name($name) { $this->_last_name = $name; }
+    public function set_user_type($type) { $this->_user_type = $type; }
+    public function set_email($email) { $this->_email = $email; }
 
     /**
      * fetch_user_data function
@@ -87,13 +89,17 @@ class User_model extends CI_Model
      */
     public function set_user_data($user)
     {
-        $this->set_id($user->id);
-        $this->set_username($user->username);
-        $this->set_password($user->password);
-        $this->set_first_name($user->first_name);
-        $this->set_last_name($user->last_name);
-        $this->set_user_type($user->user_type);
-        $this->set_email($user->email);
+        // Validation
+        if(is_object($user))
+        {
+            $this->set_id($user->id);
+            $this->set_username($user->username);
+            $this->set_password($user->password);
+            $this->set_first_name($user->first_name);
+            $this->set_last_name($user->last_name);
+            $this->set_user_type($user->user_type);
+            $this->set_email($user->email);
+        }
     }
 
     /**
@@ -227,6 +233,15 @@ class User_model extends CI_Model
         unset($_SESSION['logged_in']);
     }
 
+    /**
+     * check_user_type
+     * 
+     * Returns true or false depending on parameters entered.
+     *
+     * @param int $id
+     * @param string $type
+     * @return bool
+     */
     public function check_user_type($id, $type)
     {
         $this->fetch_user_data($id);

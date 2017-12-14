@@ -25,6 +25,7 @@ if ( ! function_exists('check_perm'))
                     }
                 break;
             default:
+                break;
         }
     }   
 }
