@@ -88,25 +88,71 @@ class Product_model extends CI_Model
         return $products;
     }
 
-    public function fetch_products_limited($start, $limit)
+    public function fetch_products_limited($start, $limit, $type = null)
     {
-        $products_array = $this->db->limit($start, $limit)->get("products")->result_array(); 
 
-        $products = array();
-        
-        foreach($products_array as $prod)
+        if($type === null)
         {
-            $product = new Product_model();
-            $product->set_product_data($prod, 'array');
-            array_push($products, $product);
+            $products_array = $this->db->limit($start, $limit)->get("products")->result_array(); 
+            
+            $products = array();
+            
+            foreach($products_array as $prod)
+            {
+                $product = new Product_model();
+                $product->set_product_data($prod, 'array');
+                array_push($products, $product);
+            }
+    
+            return $products;
+        }
+        else
+        {
+            // Get the ID of the category
+            $cat = $this->db->get_where('categories', ['id'=>$type])->result();
+
+            $products_array = $this->db->select('*')->
+                                from('products')->
+                                join('categories_products', 'categories_products.products_id = products.id')->
+                                where('categories_products.categories_id', $cat[0]->id)->
+                                limit($start, $limit)->
+                                get()->
+                                result_array();
+            
+            $products = array();
+            
+            foreach($products_array as $prod)
+            {
+                $product = new Product_model();
+                $product->set_product_data($prod, 'array');
+                array_push($products, $product);
+            }
+    
+            return $products;
         }
 
-        return $products;
+        
     }
 
-    public function count_products()
+    public function count_products($type = null)
     {
-        return $this->db->get('products')->num_rows();
+        if($type === null)
+        {
+            return $this->db->get('products')->num_rows();
+        }
+        else
+        {
+            // Get the ID of the category
+            $cat = $this->db->get_where('categories', ['id'=>$type])->result();
+
+            // Return the number of products linked to that category
+            return $this->db->select('*')->
+                    from('products')->
+                    join('categories_products', 'categories_products.products_id = products.id')->
+                    where('categories_products.categories_id', $cat[0]->id)->
+                    get()->
+                    num_rows();
+        }
     }
 
     /**

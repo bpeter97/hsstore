@@ -5,30 +5,58 @@
     class Products extends CI_Controller 
     {
 
-        public function index()
+        public function index($type = null)
         {
-            
+
             $per_page = 6;
 
-            $count = $this->product_model->count_products();
-            
-            if(!empty($this->input->get("page")))
+            if($type === null)
             {
-
-                $start = ceil($this->input->get("page") * $per_page);             
-
-                $data['products'] = $this->product_model->fetch_products_limited($start, $start - $per_page);
-                $result = $this->load->view('products/product_listing', $data);
-
+                
+                $count = $this->product_model->count_products();
+                
+                if(!empty($this->input->get("page")))
+                {
+    
+                    $start = ceil($this->input->get("page") * $per_page);             
+    
+                    $data['products'] = $this->product_model->fetch_products_limited($start, $start - $per_page);
+                    $result = $this->load->view('products/product_listing', $data);
+    
+                }
+                else
+                {
+                    $data['products'] = $this->product_model->fetch_products_limited(6, 0);
+    
+                    $data['main_view'] = 'products/index';
+                    $this->load->view('layout/main', $data);
+                
+                }
             }
-            else
+            else 
             {
-                $data['products'] = $this->product_model->fetch_products_limited(6, 0);
-
-                $data['main_view'] = 'products/index';
-                $this->load->view('layout/main', $data);
-            
+                $count = $this->product_model->count_products($type);
+                
+                if(!empty($this->input->get("page")))
+                {
+    
+                    $start = ceil($this->input->get("page") * $per_page);             
+    
+                    $data['products'] = $this->product_model->fetch_products_limited($start, $start - $per_page, $type);
+                    $result = $this->load->view('products/product_listing', $data);
+    
+                }
+                else
+                {
+                    $data['products'] = $this->product_model->fetch_products_limited(6, 0, $type);
+    
+                    $data['main_view'] = 'products/index';
+                    $this->load->view('layout/main', $data);
+                
+                }
             }
+            
+
         }
 
         public function view()

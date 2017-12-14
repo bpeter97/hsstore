@@ -28,13 +28,13 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Weapons</a>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Long Guns</a>
-                                <a href="#" class="dropdown-item">Pistols</a>
-                                <a href="#" class="dropdown-item">Shotguns</a>
+                                <a href="<?= base_url(); ?>products/index/3" class="dropdown-item">Long Guns</a>
+                                <a href="<?= base_url(); ?>products/index/4" class="dropdown-item">Pistols</a>
+                                <a href="<?= base_url(); ?>products/index/5" class="dropdown-item">Shotguns</a>
                             </div>
                         </li> 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Accessories</a>
+                        <a href="<?= base_url(); ?>products/index/2" class="nav-link">Accessories</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">

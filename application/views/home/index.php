@@ -241,7 +241,7 @@
                             <figcaption>
                                 <h1>Long Guns</h1>
                                 <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
+                                <button onclick="location.href='<?= base_url(); ?>products/index/3'" type="button" class="btn btn-primary btn-sm mt-1">View Inventory</a>
                                 </div>
                             </figcaption>
                         </div>
@@ -252,7 +252,7 @@
                             <figcaption>
                                 <h1>Pistols</h1>
                                 <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
+                                <button onclick="location.href='<?= base_url(); ?>products/index/4'" type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
                                 </div>
                             </figcaption>
                         </div>
@@ -265,7 +265,7 @@
                             <figcaption>
                                 <h1>Shotguns</h1>
                                 <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
+                                <button onclick="location.href='<?= base_url(); ?>products/index/5'" type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
                                 </div>
                             </figcaption>
                         </div>
@@ -276,7 +276,7 @@
                             <figcaption>
                                 <h1>Accessories</h1>
                                 <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
+                                <button onclick="location.href='<?= base_url(); ?>products/index/2'" type="button" class="btn btn-primary btn-sm mt-1">View Inventory</button>
                                 </div>
                             </figcaption>
                         </div>
