@@ -126,4 +126,73 @@
             
         }
 
+        /**
+         * Contact function
+         *
+         * This function will send an email containing information that the user submits.
+         * 
+         * @return void
+         */
+        public function contact()
+        {
+            // Validate input when product is created.
+            $this->form_validation->set_rules('name','Name','trim|required|min_length[3]');
+            $this->form_validation->set_rules('email','Email','valid_email|trim|required|min_length[3]');
+            $this->form_validation->set_rules('phone','Phone','trim|required|min_length[10]');
+            $this->form_validation->set_rules('product','Product','trim|min_length[3]');
+            $this->form_validation->set_rules('details','Details','required|min_length[3]');
+
+            // Check to see if validation is good or fails.
+            if( ! $this->form_validation->run() ) // Validation failed, send to main, and render errors.
+            {
+                // Send home with success message.
+                $this->session->set_flashdata('error_msg', $this->form_validation->error_array());
+
+                // Redirect to main page of products.
+                redirect('products/index');
+            }
+            else
+            {
+                // $config = array(
+                //     'protocol'  => 'smtp',
+                //     'smtp_host' => 'ssl://smtp.googlemail.com',
+                //     'smtp_port' => 465,
+                //     'smtp_user' => 'brian.lee.peter@gmail.com',
+                //     'smtp_pass' => 'Brianpeter1!',
+                //     'wordwrap' => TRUE
+                // );
+                // $this->load->library('email', $config);
+                // TODO: Need to test feature on live server.
+
+                $this->load->library('email');
+
+                $this->email->set_newline("\r\n"); 
+
+                $this->email->from($this->input->post('email'), $this->input->post('name'));
+                $this->email->to("snakekeeper97@gmail.com");
+                $this->email->subject('test');
+                $this->email->message(
+                    'Customer Name: ' . $this->input->post('name') . ' (Phone: '. $this->input->post('phone') .'). I am interested in: ' . 
+                    $this->input->post('product') . '. </br>' . 'Additional Details: ' . $this->input->post('details')
+                );
+                if( $this->email->send() )
+                {
+                    // Send home with success message.
+                    $this->session->set_flashdata('success_msg', 'Your message was sent!');
+                    
+                    // Redirect to main page of products.
+                    redirect('products');
+                }
+                else
+                {
+                    // Send home with success message.
+                    $this->session->set_flashdata('error_msg', array($this->email->print_debugger()));
+                    // $this->session->set_flashdata('error_msg', array('The message was unable to be sent.'));
+
+                    // Redirect to main page of products.
+                    redirect('products');
+                }
+            }
+        }
+
     }

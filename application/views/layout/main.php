@@ -107,12 +107,6 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fa fa-shopping-cart"></i>
-                            <span>7 - Items</span>
-                        </a>
-                    </li>
                     <?php if($this->session->has_userdata('logged_in')): ?>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= $this->session->userdata('username'); ?></a>
@@ -512,6 +506,12 @@
 	}
 </script>
 <!-- End of infinite scrolling for product page -->
+
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+</script>
 
 </body>
 </html>

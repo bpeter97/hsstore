@@ -28,6 +28,7 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Weapons</a>
                             <div class="dropdown-menu">
+                                <a href="<?= base_url(); ?>products/" class="dropdown-item">All Weapons</a>
                                 <a href="<?= base_url(); ?>products/index/3" class="dropdown-item">Long Guns</a>
                                 <a href="<?= base_url(); ?>products/index/4" class="dropdown-item">Pistols</a>
                                 <a href="<?= base_url(); ?>products/index/5" class="dropdown-item">Shotguns</a>
