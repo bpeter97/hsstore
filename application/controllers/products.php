@@ -153,17 +153,6 @@
             }
             else
             {
-                // $config = array(
-                //     'protocol'  => 'smtp',
-                //     'smtp_host' => 'ssl://smtp.googlemail.com',
-                //     'smtp_port' => 465,
-                //     'smtp_user' => 'brian.lee.peter@gmail.com',
-                //     'smtp_pass' => 'Brianpeter1!',
-                //     'wordwrap' => TRUE
-                // );
-                // $this->load->library('email', $config);
-                // TODO: Need to test feature on live server.
-
                 $this->load->library('email');
 
                 $this->email->set_newline("\r\n"); 
@@ -173,7 +162,7 @@
                 $this->email->subject('test');
                 $this->email->message(
                     'Customer Name: ' . $this->input->post('name') . ' (Phone: '. $this->input->post('phone') .'). I am interested in: ' . 
-                    $this->input->post('product') . '. </br>' . 'Additional Details: ' . $this->input->post('details')
+                    $this->input->post('product') . ' Additional Details: ' . $this->input->post('details')
                 );
                 if( $this->email->send() )
                 {
